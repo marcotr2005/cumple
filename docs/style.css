@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+  }
+  
+html,
+body {
+height: 100%;
+/* for touch screen */
+touch-action: none; 
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: black;
+    border-radius: 10px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Asegura que todo se apile verticalmente */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para las fotos */
+.photos {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px; /* Espacio entre las fotos y la carta */
+}
+
+.photos img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+/* Estilos de la carta */
+.scene {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+/*creo que este es el fondo */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: black;
+    border-radius: 10px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.scene {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: black;
+    border-radius: 10px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+#drag-container, #spin-container {
+position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+margin: auto;
+-webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+-webkit-transform: rotateX(-10deg);
+        transform: rotateX(-10deg);
+}
+
+#drag-container {
+    width: 350px;   /* Tamaño real de las fotos */
+    height: 350px;
+}
+
+#drag-container img, #drag-container video {
+-webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+position: absolute;
+left: 0;
+top: 0;
+width: 175%;
+height: 175%;
+line-height: 200px;
+font-size: 50px;
+text-align: center;
+-webkit-box-shadow: 0 0 8px #fff;
+        box-shadow: 0 0 8px #fff;
+-webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+
+}
+
+#drag-container img:hover, #drag-container video:hover {
+-webkit-box-shadow: 0 0 15px #fffd;
+        box-shadow: 0 0 15px #fffd;
+-webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+}
+
+#drag-container p {
+font-family: Serif;
+position: absolute;
+top: 100%;
+left: 50%;
+
+-webkit-transform: translate(-50%,-50%) rotateX(90deg);
+        transform: translate(-50%,-50%) rotateX(90deg);
+color: #fff;
+}
+
+#ground {
+width: 900px;
+height: 900px;
+position: absolute;
+top: 100%;
+left: 50%;
+-webkit-transform: translate(-50%,-50%) rotateX(90deg);
+        transform: translate(-50%,-50%) rotateX(90deg);
+background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+}
+
+#music-container {
+position: absolute;
+top: 10px;
+left: 40%;
+right: 50%;
+}
+
+@-webkit-keyframes spin {
+from{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+} to{
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+}
+
+@keyframes spin {
+from{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+} to{
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+}
+@-webkit-keyframes spinRevert {
+from{
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+} to{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+}
+@keyframes spinRevert {
+from{
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+} to{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+}
